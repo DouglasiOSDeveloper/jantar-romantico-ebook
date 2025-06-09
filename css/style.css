@@ -255,6 +255,16 @@ body {
   z-index: 2;
 }
 
+.section2__content > .section2__icon-heart,
+.section2__content > .section2__date,
+.section2__content > .section2__title,
+.section2__content > .section2__desc,
+.section2__content > .btn--second {
+  position: relative;
+  top: -200px;   /* experimente ajustar entre -180px a -240px até encaixar na área branca */
+  z-index: 2;
+}
+
 /* 2.6. Ícone X e título de soluções (abaixo das fitas) */
 .section2__icon-x {
   width: 68px;
