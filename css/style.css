@@ -41,29 +41,37 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 16px;
+  padding: 8px 16px 0;
 }
 
 /* Hero Logo */
 .hero__logo {
-  width: 530px;
-  height: 260px;
-  margin: 20px 0 24px;
-  overflow: hidden;
+  /* Defina aqui a largura que quiser */
+  width: 250px;
+  /* Ajuste a altura para exatamente a área útil do arquivo */
+  height:  sixtypx; /* experimente até caber certinho; por ex. 60px */
+  margin: 10px auto 16px; /* sobe a logo e diminui o espaço superior */
+  overflow: hidden;        /* tudo fora desse box será escondido */
 }
+
 .hero__logo img {
   display: block;
+  /* amplia a imagem para preencher a altura do container */
   height: 100%;
   width: auto;
-  object-fit: contain;
+  /* reposiciona a imagem para mostrar só a parte de cima (onde está o logo) */
+  object-fit: none;
+  object-position: center top;
 }
 
 /* Hero Texts */
 .hero__title {
   font-size: 48px;
   line-height: 1.2;
-  margin: 24px 0 8px;
+  margin-top: 8px;  /* sobe o título para ficar mais perto da logo */
+  margin-bottom: 8px;
 }
+
 .hero__title .highlight {
   background: #fff200;
   color: #e22128;
