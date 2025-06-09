@@ -228,15 +228,6 @@ body {
   display: block;
   margin: 0 auto 8px;
 }
-.section2__date {
-  display: inline-block;
-  background: #e22128;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-size: 14px;
-  margin-bottom: 24px;
-}
 
 /* 2.4. Título e descrição (acima das fitas) */
 .section2__title {
