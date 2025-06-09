@@ -124,19 +124,23 @@ body {
   justify-content: center;
   margin-bottom: 40px;
 }
+
 .review {
   background: #BF2623;
   color: #fff;
   border-radius: 12px;
   padding: 16px;
   max-width: 240px;
-  box-shadow: -8px 8px 16px rgba(0, 0, 0, 0.2);
+  /* sombra conforme especificado: X = -14, Y = 18, Blur = 2, Spread = 0, cor = #540302 */
+  box-shadow: -14px 18px 2px 0px #540302;
 }
+
 .review strong {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
 }
+
 .review p {
   font-size: 14px;
   line-height: 1.4;
