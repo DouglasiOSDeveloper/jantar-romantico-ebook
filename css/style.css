@@ -238,13 +238,11 @@ body {
   align-items: flex-start;
   gap: 16px;
 }
-.solution--reverse {
-  flex-direction: row-reverse;
-}
 
-.section2__solutions-list .solution:nth-child(2) {
-  display: flex;
-  flex-direction: row-reverse;
+/* Inverter ordem só no segundo item (restaurante) */
+.section2__solutions-list > .solution.solution--reverse {
+  display: flex;              /* reafirma que é flex */
+  flex-direction: row-reverse !important;
 }
 
 /* Ícone grande, sem encolher */
