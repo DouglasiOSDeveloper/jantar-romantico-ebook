@@ -162,7 +162,7 @@ body {
 .section2__content {
   position: relative;
   z-index: 1;
-  padding: 40px 16px 120px;    /* mais espaço embaixo */
+  padding: 40px 16px 200px;    /* mais espaço embaixo */
   text-align: center;
 }
 
