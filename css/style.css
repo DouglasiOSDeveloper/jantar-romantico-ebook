@@ -48,17 +48,25 @@ body {
 
 /* Hero Logo */
 .hero__logo {
-  width: 530px;
-  height: 260px;
-  margin: 16px auto 24px;
-  overflow: hidden;
+  position: relative;   /* para o left funcionar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;         /* ajuste até só pegar a parte visível da arte */
+  height: 100px;        /* idem */
+  margin: 0 0 16px;     /* zero em cima, 16px embaixo */
+  overflow: hidden;     /* recorta o whitespace invisível */
+  z-index: 2;           /* acima do bg */
 }
+
+/* 3) A imagem escalará para preencher a caixa e ficará centralizada */
 .hero__logo img {
-  display: block;
-  height: 100%;
-  width: auto;
-   object-fit: cover;
-  object-position: center top; /* centraliza horizontalmente, ajusta vertical se precisar subir mais */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;   
+  height: 100%;  
+  object-fit: cover;
 }
 
 /* Hero Texts */
