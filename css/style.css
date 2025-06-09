@@ -119,9 +119,10 @@ body {
 .reviews {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px; /* espaço entre os cards um pouco maior */
   justify-content: center;
   margin-bottom: 40px;
+  padding: 0 20px; /* margem lateral em telas menores */
 }
 
 .review {
@@ -129,9 +130,12 @@ body {
   color: #fff;
   border-radius: 12px;
   padding: 16px;
-  max-width: 240px;
+  width: 100%;
+  max-width: 360px; /* Aumentado de 240px para 360px */
   box-shadow: -14px 18px 2px 0px #540302;
+  flex: 1 1 300px; /* permite que se expandam melhor no espaço */
 }
+
 
 .review strong {
   display: block;
