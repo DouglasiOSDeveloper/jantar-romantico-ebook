@@ -251,12 +251,13 @@ body {
 }
 
 /* Caixa de texto com fundo, borda arredondada e sombra */
+/* Ajuste da sombra para X = -14px, Y = 18px, Blur = 2px, Spread = 0px, cor = #540302 */
 .solution__box {
   background: #BF2623;
   border-radius: 12px;
   padding: 16px;
   flex: 1;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: -14px 18px 2px 0px #540302;
 }
 
 /* Texto dentro da caixa */
