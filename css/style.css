@@ -284,7 +284,7 @@ body {
 .section2__content>.section2__desc,
 .section2__content>.btn--second {
     position: relative;
-    top: -300px;
+    top: -280px;
     /* experimente ajustar entre -180px a -240px até encaixar na área branca */
     z-index: 2;
 }
@@ -301,7 +301,7 @@ body {
 .section2__solutions-title {
     font-size: 24px;
     color: #8C1A26;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
     position: relative;
     z-index: 1;
 }
@@ -310,7 +310,7 @@ body {
 .section2__solutions-list {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 40px;
     max-width: 800px;
     margin: 0 auto;
 }
