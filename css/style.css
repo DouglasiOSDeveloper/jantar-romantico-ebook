@@ -239,12 +239,6 @@ body {
   gap: 16px;
 }
 
-/* Inverter ordem só no segundo item (restaurante) */
-.section2__solutions-list > .solution.solution--reverse {
-  display: flex;              /* reafirma que é flex */
-  flex-direction: row-reverse !important;
-}
-
 /* Ícone grande, sem encolher */
 .solution__icon {
   width: 80px;          /* maior que antes */
@@ -268,6 +262,13 @@ body {
   font-size: 16px;      /* um pouco maior */
   line-height: 1.5;
 }
+
+/* Alternativa: sem alterar HTML, inverte o 2º filho */
+.section2__solutions-list > .solution:nth-child(2) {
+  display: flex;
+  flex-direction: row-reverse !important;
+}
+
 
 /* === Responsividade Section 2 === */
 @media (max-width: 768px) {
