@@ -245,7 +245,7 @@ body {
 
 /* Ícone grande, sem encolher */
 .solution__icon {
-  width: 120px;
+  width: 160px;
   height: auto;
   flex-shrink: 0;
 }
