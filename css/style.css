@@ -261,7 +261,7 @@ body {
 .section2__content > .section2__desc,
 .section2__content > .btn--second {
   position: relative;
-  top: -200px;   /* experimente ajustar entre -180px a -240px até encaixar na área branca */
+  top: -300px;   /* experimente ajustar entre -180px a -240px até encaixar na área branca */
   z-index: 2;
 }
 
