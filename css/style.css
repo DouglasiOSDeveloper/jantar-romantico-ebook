@@ -430,12 +430,13 @@ body {
 
 /* preço riscado + novo preço centralizado */
 .offer__card-old {
+  display: block;
   text-align: center;
-  font-size: 14px;
-  opacity: 0.6;
   margin-bottom: 8px;
   position: relative;
   z-index: 1;
+  font-size: 14px;
+  opacity: 0.6;
 }
 .offer__card-old del {
   text-decoration: line-through;
@@ -554,8 +555,8 @@ body {
   margin: 0 auto;
 }
 .guarantee__icon {
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
 }
 .guarantee__text {
   font-size: 16px;
