@@ -355,7 +355,7 @@ body {
   padding: 80px 16px;
 }
 
-/* wrapper principal: duas colunas (benefícios + card) */
+/* wrapper: duas colunas */
 .offer__wrapper {
   display: flex;
   align-items: flex-start;
@@ -366,18 +366,18 @@ body {
   gap: 32px;
 }
 
-/* coluna da esquerda: título + lista */
+/* coluna esquerda */
 .offer__left {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* título “Você vai receber” */
+/* título */
 .offer__heading {
-  font-size: 36px;         /* maior para ocupar espaço */
+  font-size: 36px;
   color: #fff200;
-  margin-bottom: 24px;     /* lista logo abaixo */
+  margin-bottom: 24px;
 }
 
 /* lista de benefícios */
@@ -389,20 +389,20 @@ body {
 .offer__benefits li {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;     /* espaçamento um pouco maior */
+  margin-bottom: 20px;
 }
 .offer__benefits img {
-  width: 40px;             /* ícones maiores */
-  height: 40px;
+  width: 48px;        /* ícones maiores */
+  height: 48px;
   margin-right: 16px;
 }
 .offer__benefits span {
   color: #fff;
-  font-size: 18px;         /* texto maior */
+  font-size: 20px;    /* texto maior */
   line-height: 1.4;
 }
 
-/* cartão interno semitransparente (coluna da direita) */
+/* cartão interno */
 .offer__card {
   position: relative;
   width: 300px;
@@ -414,11 +414,11 @@ body {
 .offer__card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   z-index: 0;
 }
 
-/* logo dentro do card */
+/* logo do card */
 .offer__card-logo {
   display: block;
   max-width: 160px;
@@ -428,7 +428,7 @@ body {
   z-index: 1;
 }
 
-/* preço antigo riscado e novo preço */
+/* preço riscado + novo preço centralizado */
 .offer__card-old {
   text-align: center;
   font-size: 14px;
@@ -451,7 +451,7 @@ body {
   z-index: 1;
 }
 
-/* features dentro do card */
+/* features do card */
 .offer__card-features {
   list-style: none;
   padding: 0;
@@ -459,17 +459,17 @@ body {
   position: relative;
   z-index: 1;
 }
-/* primeiro item: ícone exclusivo centralizado */
+/* ícone exclusivo */
 .offer__card-features .feature--exclusive {
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
 }
 .offer__card-features .feature--exclusive img {
-  width: 48px;
+  width: 56px;   /* um pouco maior */
   height: auto;
 }
-/* depois, checks com texto */
+/* checks com texto */
 .offer__card-features li:not(.feature--exclusive) {
   display: flex;
   align-items: center;
@@ -484,12 +484,12 @@ body {
   font-size: 14px;
 }
 
-/* botão de oferta em negrito, sem sublinhado e com cor ajustada */
+/* botão */
 .btn--offer {
   display: block;
   background: #fff;
-  color: #7D0000;          /* cor do texto */
-  text-decoration: none;   /* remove sublinhado */
+  color: #7D0000;
+  text-decoration: none;
   border: none;
   border-radius: 24px;
   padding: 12px 24px;
@@ -504,7 +504,7 @@ body {
   font-weight: 700;
 }
 
-/* === Responsividade Seção 5 === */
+/* responsividade */
 @media (max-width: 768px) {
   .offer__wrapper {
     flex-direction: column;
@@ -523,8 +523,8 @@ body {
     margin-bottom: 16px;
   }
   .offer__benefits img {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     margin-right: 12px;
   }
   .offer__benefits span {
@@ -535,6 +535,7 @@ body {
     max-width: 350px;
   }
 }
+
 
 
 
