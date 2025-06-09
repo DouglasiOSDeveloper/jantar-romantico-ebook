@@ -172,15 +172,6 @@ body {
   display: block;
   margin: 0 auto 8px;
 }
-.section2__date {
-  display: inline-block;
-  background: #e22128;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-size: 14px;
-  margin-bottom: 24px;
-}
 
 /* 2.4. Título e descrição (acima das fitas) */
 .section2__title {
@@ -209,12 +200,11 @@ body {
 }
 
 .section2__content > .section2__icon-heart,
-.section2__content > .section2__date,
 .section2__content > .section2__title,
 .section2__content > .section2__desc,
 .section2__content > .btn--second {
   position: relative;
-  top: -200px;    /* puxe este valor até alinhar certinho dentro da área branca */
+  top: -300px;    /* puxe este valor até alinhar certinho dentro da área branca */
   z-index: 2;     /* garanta que fiquem acima das fitas */
 }
 
