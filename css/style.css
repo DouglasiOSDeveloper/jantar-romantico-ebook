@@ -503,6 +503,42 @@ body {
   }
 }
 
+/* === Seção 6 – Garantia === */
+#guarantee {
+  background: #E22128;
+  padding: 24px 16px;
+  color: #fff;
+}
+.guarantee__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.guarantee__icon {
+  width: 32px;
+  height: 32px;
+}
+.guarantee__text {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+.guarantee__text strong {
+  font-weight: 700;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .guarantee__inner {
+    flex-direction: column;
+  }
+  .guarantee__text {
+    font-size: 14px;
+  }
+}
 
 
 /* === Ribbon Section === */
