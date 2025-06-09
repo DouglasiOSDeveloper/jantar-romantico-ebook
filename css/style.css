@@ -725,12 +725,4 @@ body {
   .review {
     max-width: 100%;
   }
-  /* False Solutions to single column */
-  #false-solutions .grid-3 {
-    grid-template-columns: 1fr;
-  }
-  /* Offer single column */
-  #offer .grid-2 {
-    grid-template-columns: 1fr;
-  }
 }
