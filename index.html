@@ -96,7 +96,7 @@
             </p>
 
             <!-- 5) Botão CTA (acima das fitas) -->
-            <a href="#offer" class="btn btn--second">QUERO ACESSO IMEDIATO</a>
+            <a href="#offer" onclick="scrollToOffer(event)" class="btn btn--second">QUERO ACESSO IMEDIATO</a>
 
             <!-- 6) Ícone X (abaixo das fitas) -->
             <img src="./images/icon x.png" alt="X" class="section2__icon-x" />
@@ -264,7 +264,7 @@
             event.preventDefault();
             const target = document.getElementById("offer");
 
-            const yOffset = -700; // deslocamento de 100px acima do topo da seção
+            const yOffset = 100; // deslocamento de 100px acima do topo da seção
             const yPosition = target.getBoundingClientRect().top + window.scrollY + yOffset;
 
             window.scrollTo({
