@@ -473,10 +473,10 @@ body {
 
 /* === Seção 5 – Oferta e Preço === */
 #offer {
-  position: relative;
-  width: 100vw;
-  overflow: hidden;
+  scroll-margin-top: 120px; /* ou ajuste conforme necessário */
 }
+
+
 .offer__bg {
   position: absolute;
   inset: 0;
