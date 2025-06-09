@@ -162,28 +162,15 @@ body {
 .section2__content {
   position: relative;
   z-index: 1;
-  padding: 200px 16px 300px;    /* mantém o espaço branco em cima e embaixo */
+  padding: 280px 16px 300px;    /* mais espaço embaixo */
   text-align: center;
 }
 
 /* 2.3. Ícone + data */
 .section2__icon-heart {
-  width: 200px;
+  width: 300px;
   display: block;
   margin: 0 auto 8px;
-  position: relative;
-  z-index: 2;                   /* acima das fitas */
-}
-.section2__date {
-  display: inline-block;
-  background: #e22128;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-size: 14px;
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 2;
 }
 
 /* 2.4. Título e descrição (acima das fitas) */
@@ -191,20 +178,16 @@ body {
   font-size: 32px;
   color: #8C1A26;
   margin-bottom: 12px;
-  position: relative;
-  z-index: 2;
 }
 .section2__desc {
   font-size: 18px;
   color: #5A0F15;
   margin-bottom: 24px;
-  position: relative;
-  z-index: 2;
 }
 
-/* 2.5. Botão CTA (acima das fitas) */
+/* 2.5. Botão CTA */
 .btn--second {
-  background: #E61919;
+  background: #E61919;          /* cor ajustada */
   color: #fff;
   padding: 16px 32px;
   border: none;
@@ -216,9 +199,17 @@ body {
   z-index: 2;
 }
 
+.section2__content > .section2__icon-heart,
+.section2__content > .section2__title,
+.section2__content > .section2__desc,
+.section2__content > .btn--second {
+  position: relative;
+  top: -300px;    /* puxe este valor até alinhar certinho dentro da área branca */
+}
+
 /* 2.6. Ícone X e título de soluções (abaixo das fitas) */
 .section2__icon-x {
-  width: 48px;
+  width: 68px;
   display: block;
   margin: 0 auto 16px;
   position: relative;
@@ -250,7 +241,7 @@ body {
 
 /* Ícone grande, sem encolher */
 .solution__icon {
-  width: 80px;
+  width: 120px;
   height: auto;
   flex-shrink: 0;
 }
@@ -306,7 +297,6 @@ body {
     display: none;
   }
 }
-
 
 /* === Seção 3 – A verdade é que… === */
 #section3 {
