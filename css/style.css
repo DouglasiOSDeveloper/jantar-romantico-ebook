@@ -520,7 +520,7 @@ body {
     position: relative;
     width: 100vw;
     overflow: hidden;
-    scroll-margin-top: 20px;
+    scroll-margin-bottom: 20px;
 }
 
 .offer__bg {
