@@ -145,7 +145,6 @@ body {
 /* === Seção 2 – Falsas Soluções === */
 #section2 {
   position: relative;
-  overflow: hidden;
   width: 100vw;
 }
 
@@ -163,7 +162,6 @@ body {
   z-index: 1;
   padding: 80px 16px;
   text-align: center;
-  background: rgba(255,255,255,0.9); /* opcional para legibilidade */
 }
 
 /* 2.3. Ícone + data */
