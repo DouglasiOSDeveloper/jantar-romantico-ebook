@@ -332,7 +332,7 @@ body {
 @media (max-width: 768px) {
   /* reduz top-padding para trazer toda a seção 2 pra cima */
   .section2__content {
-    padding: 20px 16px 80px;
+    padding: 200px 16px 80px;
   }
 
   /* sobe o ícone, data, título, descrição e botão para a área branca */
