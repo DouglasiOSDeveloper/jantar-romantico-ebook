@@ -206,6 +206,7 @@ body {
   min-height: 100vh;
 }
 
+/* 2.1. Background full-bleed */
 .section2__bg {
   position: absolute;
   inset: 0;
@@ -213,18 +214,19 @@ body {
   z-index: 0;
 }
 
+/* 2.2. Conteúdo por cima do bg */
 .section2__content {
   position: relative;
   z-index: 1;
-  padding: 280px 16px 300px;  /* mantém a mesma área no desktop */
+  padding: 280px 16px 300px;
   text-align: center;
 }
 
-/* Ícone + data (sempre posicionados pelo fluxo normal) */
+/* 2.3. Ícone + data */
 .section2__icon-heart {
   width: 300px;
-  margin: 0 auto 8px;
   display: block;
+  margin: 0 auto 8px;
 }
 .section2__date {
   display: inline-block;
@@ -236,7 +238,7 @@ body {
   margin-bottom: 24px;
 }
 
-/* Título e descrição (acima das fitas) */
+/* 2.4. Título e descrição (acima das fitas) */
 .section2__title {
   font-size: 32px;
   color: #8C1A26;
@@ -248,7 +250,7 @@ body {
   margin-bottom: 24px;
 }
 
-/* Botão CTA */
+/* 2.5. Botão CTA */
 .btn--second {
   background: #E61919;
   color: #fff;
@@ -262,11 +264,11 @@ body {
   z-index: 2;
 }
 
-/* Ícone X e título de soluções (abaixo das fitas) */
+/* 2.6. Ícone X e título de soluções (abaixo das fitas) */
 .section2__icon-x {
   width: 68px;
-  margin: 0 auto 16px;
   display: block;
+  margin: 0 auto 16px;
   position: relative;
   z-index: 1;
 }
@@ -278,7 +280,7 @@ body {
   z-index: 1;
 }
 
-/* Lista de soluções empilhadas */
+/* 2.7. Lista de soluções empilhadas */
 .section2__solutions-list {
   display: flex;
   flex-direction: column;
@@ -287,20 +289,20 @@ body {
   margin: 0 auto;
 }
 
-/* Cada solução: ícone ao lado da caixa de texto */
+/* Container de cada item */
 .solution {
   display: flex;
   align-items: flex-start;
   gap: 16px;
 }
 
-/* Ícone grande */
+/* Ícone grande, sem encolher */
 .solution__icon {
   width: 160px;
   flex-shrink: 0;
 }
 
-/* Caixa de texto com sombra */
+/* Caixa de texto com fundo, borda arredondada e sombra */
 .solution__box {
   background: #BF2623;
   border-radius: 12px;
@@ -315,7 +317,7 @@ body {
   line-height: 1.5;
 }
 
-/* Invertemos via order apenas no desktop */
+/* 2.8. Forçar inversão no 2º item (restaurante) via order */
 .solution--reverse {
   display: flex;
 }
@@ -326,35 +328,39 @@ body {
   order: 2;
 }
 
-/* === Responsividade Seção 2 (mobile) === */
+/* === Responsividade Section 2 (APENAS mobile) === */
 @media (max-width: 768px) {
-  /* força todo o conteúdo principal para o fluxo normal, acima das fitas */
-  .section2__content > .section2__icon-heart,
-  .section2__content > .section2__date,
-  .section2__content > .section2__title,
-  .section2__content > .section2__desc,
-  .section2__content > .btn--second {
-    position: static !important;
-    top: auto !important;
-    margin-top: 16px;
+  /* reduz top-padding para trazer toda a seção 2 pra cima */
+  .section2__content {
+    padding: 120px 16px 80px;
   }
-  /* remove as fitas para não atrapalhar no mobile */
+
+  /* sobe o ícone, data, título, descrição e botão para a área branca */
+  .section2__icon-heart,
+  .section2__date,
+  .section2__title,
+  .section2__desc,
+  .btn--second {
+    position: relative;
+    top: -200px;     /* ajuste até encaixar no branco, pode variar +/- 20px */
+    z-index: 2;
+  }
+
+  /* esconde as fitas vermelhas no mobile */
   .ribbon,
   .ribbon--reverse {
     display: none;
   }
-  /* ajusta o padding para que os componentes fiquem dentro da área branca */
-  .section2__content {
-    padding: 120px 16px 80px;
-  }
-  /* centraliza e aumenta o ícone X e o título vazio */
+
+  /* alinha o X e o título de falsas soluções já no amarelo */
   .section2__icon-x {
-    margin: 24px auto 16px;
+    margin-top: 0;
   }
   .section2__solutions-title {
-    margin-bottom: 24px;
+    margin: 0 0 24px;
   }
-  /* empilha cada solução no mobile: ícone acima, texto abaixo */
+
+  /* empilha cada solução: ícone em cima, texto embaixo */
   .solution {
     flex-direction: column;
     align-items: center;
@@ -367,7 +373,8 @@ body {
   .solution__box {
     width: 100%;
   }
-  /* garante que a segunda solução também fique empilhada, sem order */
+
+  /* garante que a 2ª solução também fique empilhada */
   .solution--reverse {
     flex-direction: column;
   }
