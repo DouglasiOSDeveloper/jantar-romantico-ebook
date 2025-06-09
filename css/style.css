@@ -241,7 +241,7 @@ body {
 .section2__content {
     position: relative;
     z-index: 1;
-    padding: 280px 16px 300px;
+    padding: 280px 16px 120px;
     text-align: center;
 }
 
