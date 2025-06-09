@@ -251,6 +251,29 @@ body {
   text-align: left;
 }
 
+/* === Responsividade Section 2 === */
+@media (max-width: 768px) {
+  .section2__content {
+    padding: 32px 16px 80px;
+  }
+  .section2__title {
+    font-size: 24px;
+  }
+  .section2__desc {
+    font-size: 16px;
+  }
+  .btn--second {
+    font-size: 16px;
+    padding: 14px 24px;
+  }
+  .section2__solutions-list {
+    grid-template-columns: 1fr;
+  }
+  .ribbon, .ribbon--reverse {
+    display: none; /* se não couber bem no mobile */
+  }
+}
+
 /* === Seção 3 – A verdade é que… === */
 #section3 {
   background: #E22128;
@@ -314,29 +337,6 @@ body {
   }
 }
 
-/* === Responsividade Section 2 === */
-@media (max-width: 768px) {
-  .section2__content {
-    padding: 32px 16px 80px;
-  }
-  .section2__title {
-    font-size: 24px;
-  }
-  .section2__desc {
-    font-size: 16px;
-  }
-  .btn--second {
-    font-size: 16px;
-    padding: 14px 24px;
-  }
-  .section2__solutions-list {
-    grid-template-columns: 1fr;
-  }
-  .ribbon, .ribbon--reverse {
-    display: none; /* se não couber bem no mobile */
-  }
-}
-
 /* === Offer Section (Seção 5) === */
 #offer {
   position: relative;
@@ -346,40 +346,36 @@ body {
 .offer__bg {
   position: absolute;
   inset: 0;
-  background: url('../images/fundo amarelo.png') center / cover no-repeat;
+  background: url('../images/fundo amarelo.png') center/cover no-repeat;
   z-index: 0;
 }
-
 .offer__content {
   position: relative;
   z-index: 1;
   padding: 80px 16px;
 }
-
 /* wrapper com o quadrado grande de oferta */
 .offer__wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background: url('../images/quadrado area de oferta.png') center / cover no-repeat;
+  background: url('../images/quadrado area de oferta.png') center/cover no-repeat;
   border-radius: 16px;
   padding: 40px;
   gap: 32px;
 }
 
-/* título “Você vai receber” */
+/* título “Você vai receber” e lista logo abaixo */
 .offer__heading {
   font-size: 28px;
-  color: #fff200;  /* amarelo */
-  margin-bottom: 24px;
+  color: #fff200;
+  margin-bottom: 16px;   /* lista imediatamente abaixo */
   flex-shrink: 0;
 }
-
-/* lista de benefícios */
 .offer__benefits {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 40px;      /* espaço antes do card */
   flex: 1;
 }
 .offer__benefits li {
@@ -424,22 +420,26 @@ body {
   z-index: 1;
 }
 
-/* preço */
+/* preço antigo riscado e novo preço */
 .offer__card-old {
   display: block;
-  color: #fff;
-  opacity: 0.6;
   text-align: center;
   margin-bottom: 8px;
   position: relative;
   z-index: 1;
+  font-size: 14px;
+  opacity: 0.6;
+}
+.offer__card-old del {
+  text-decoration: line-through;
+  color: #fff;
 }
 .offer__card-price {
   display: block;
   font-size: 48px;
-  color: #fff200;  /* amarelo */
+  color: #fff200;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   position: relative;
   z-index: 1;
 }
@@ -452,22 +452,32 @@ body {
   position: relative;
   z-index: 1;
 }
-.offer__card-features li {
+/* primeiro item: só ícone exclusivo centralizado */
+.offer__card-features .feature--exclusive {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.offer__card-features .feature--exclusive img {
+  width: 48px;
+  height: auto;
+}
+/* depois, checks com texto */
+.offer__card-features li:not(.feature--exclusive) {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
-.offer__card-features img {
+.offer__card-features li:not(.feature--exclusive) img {
   width: 24px;
-  height: 24px;
   margin-right: 8px;
 }
-.offer__card-features span {
+.offer__card-features li:not(.feature--exclusive) span {
   color: #fff;
   font-size: 14px;
 }
 
-/* botão de oferta */
+/* botão de oferta em negrito */
 .btn--offer {
   display: block;
   background: #fff;
@@ -482,6 +492,9 @@ body {
   z-index: 1;
   cursor: pointer;
 }
+.btn--offer strong {
+  font-weight: 700;
+}
 
 /* === Responsividade Seção 5 === */
 @media (max-width: 768px) {
@@ -494,7 +507,7 @@ body {
     text-align: center;
     width: 100%;
   }
-  .offer__wrapper > .offer__benefits {
+  .offer__benefits {
     margin-bottom: 32px;
   }
   .offer__card {
@@ -503,9 +516,10 @@ body {
   }
 }
 
+
 /* === Seção 6 – Garantia === */
 #guarantee {
-  background: #E22128;
+  background: #950101;
   padding: 24px 16px;
   color: #fff;
 }
