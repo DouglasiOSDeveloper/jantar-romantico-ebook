@@ -580,36 +580,37 @@ body {
 }
 
 /* features do card */
+/* features dentro do card */
 .offer__card-features {
   list-style: none;
   padding: 0;
   margin: 0 0 24px;
   position: relative;
   z-index: 1;
-}
-/* ícone exclusivo */
-.offer__card-features .feature--exclusive {
+
+  /* deixa as linhas empilhadas e centraliza todo o grupo */
   display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
+  flex-direction: column;
+  align-items: center;   /* <— centraliza cada li dentro do ul */
 }
-.offer__card-features .feature--exclusive img {
-  width: 56px;   /* um pouco maior */
-  height: auto;
-}
-/* checks com texto */
-.offer__card-features li:not(.feature--exclusive) {
+
+.offer__card-features li {
   display: flex;
   align-items: center;
+  justify-content: center; /* <— centraliza ícone e texto dentro de cada li */
   margin-bottom: 12px;
 }
-.offer__card-features li:not(.feature--exclusive) img {
+
+.offer__card-features img {
   width: 24px;
+  height: 24px;
   margin-right: 8px;
 }
-.offer__card-features li:not(.feature--exclusive) span {
+
+.offer__card-features span {
   color: #fff;
   font-size: 14px;
+  text-align: center;     /* garante que, caso quebre, fique centralizado */
 }
 
 /* botão */
