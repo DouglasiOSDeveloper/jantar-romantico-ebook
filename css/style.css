@@ -35,15 +35,20 @@ body {
 }
 
 /* Logo */
-/* ————— Logo maior, quase colada ao topo ————— */
+/* Container da logo: define um box fixo e oculta o whitespace */
 .hero__logo {
-  margin-top: 15px;       /* afasta 15px do topo */
+  width: 280px;       /* ajuste até ficar proporcional ao mock */
+  height: 120px;      /* ajuste conforme altura visível do conteúdo */
+  margin-top: 20px;
   margin-bottom: 24px;
+  overflow: hidden;   /* corta toda a área branca ao redor */
 }
+/* Imagem dentro do container: preenche verticalmente mantendo proporção */
 .hero__logo img {
+  height: 100%;
   width: auto;
-  max-width: 280px;       /* aumenta o limite */
-  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* Textos */
