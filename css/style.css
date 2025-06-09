@@ -256,7 +256,6 @@ body {
 }
 
 .section2__content > .section2__icon-heart,
-.section2__content > .section2__date,
 .section2__content > .section2__title,
 .section2__content > .section2__desc,
 .section2__content > .btn--second {
@@ -338,19 +337,11 @@ body {
 
   /* sobe o ícone, data, título, descrição e botão para a área branca */
   .section2__icon-heart,
-  .section2__date,
   .section2__title,
   .section2__desc,
   .btn--second {
     position: relative;
-    top: -20px;
     z-index: 2;
-  }
-
-  /* esconde as fitas vermelhas no mobile */
-  .ribbon,
-  .ribbon--reverse {
-    display: none;
   }
 
   /* alinha o X e o título de falsas soluções já no amarelo */
@@ -361,7 +352,7 @@ body {
     margin: 0 0 24px;
   }
 
-  /* 1) empilha toda a lista de soluções em coluna */
+  /* 5) Empilha toda a lista de soluções em coluna */
   .section2__solutions-list {
     display: flex !important;
     flex-direction: column !important;
@@ -370,8 +361,9 @@ body {
     margin: 0 auto !important;
   }
 
-  /* 2) garante cada solução em coluna, centralizada */
-  .solution {
+  /* 6) Para cada .solution: coluna, centralizado e sem herdar ordem de desktop */
+  .solution,
+  .solution--reverse {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -379,7 +371,7 @@ body {
     gap: 8px !important;
   }
 
-  /* 3) ícone sempre acima */
+  /* 7) Ícone sempre em cima */
   .solution__icon {
     flex-shrink: 0 !important;
     width: 80px !important;
@@ -387,17 +379,24 @@ body {
     order: 0 !important;
   }
 
-  /* 4) caixa de texto sempre abaixo */
+  /* 8) Caixa de texto sempre abaixo */
   .solution__box {
     width: 100% !important;
     order: 1 !important;
   }
 
-  /* 5) anula qualquer ordem desktop na solução invertida */
-  .solution--reverse .solution__icon,
-  .solution--reverse .solution__box {
-    order: initial !important;
+  /* 9) Força também para o caso da solução invertida (solution--reverse) */
+  .solution--reverse .solution__icon {
+    order: 0 !important;
   }
+  .solution--reverse .solution__box {
+    order: 1 !important;
+  }
+
+  /* 10) Ajustes de fonte e espaçamentos menores */
+  .section2__title { font-size: 24px; }
+  .section2__desc  { font-size: 16px; }
+  .btn--second     { font-size: 16px; padding: 14px 24px; }
 }
 
 
