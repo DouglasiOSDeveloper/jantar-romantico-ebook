@@ -24,7 +24,8 @@ body {
   width: 100vw;
   min-height: 100vh;
   overflow: visible;
-  padding-bottom: 40px;
+  /* reduzimos o padding-bottom original e adicionamos um padding-top para subir o conteúdo */
+  padding: 20px 0 20px;
 }
 .hero__bg {
   position: absolute;
@@ -41,37 +42,32 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 8px 16px 0;
+  padding: 0 16px 0;  /* removido o padding-bottom extra */
+  margin-top: -40px;  /* empurra todo o conteúdo para cima */
 }
 
 /* Hero Logo */
 .hero__logo {
-  /* Defina aqui a largura que quiser */
-  width: 250px;
-  /* Ajuste a altura para exatamente a área útil do arquivo */
-  height:  sixtypx; /* experimente até caber certinho; por ex. 60px */
-  margin: 10px auto 16px; /* sobe a logo e diminui o espaço superior */
-  overflow: hidden;        /* tudo fora desse box será escondido */
+  width: 530px;
+  height: 260px;
+  /* reduzimos a margem superior para ficar mais perto do topo */
+  margin: 8px 0 16px;
+  overflow: hidden;
 }
-
 .hero__logo img {
   display: block;
-  /* amplia a imagem para preencher a altura do container */
   height: 100%;
   width: auto;
-  /* reposiciona a imagem para mostrar só a parte de cima (onde está o logo) */
-  object-fit: none;
-  object-position: center top;
+  object-fit: contain;
 }
 
 /* Hero Texts */
 .hero__title {
   font-size: 48px;
   line-height: 1.2;
-  margin-top: 8px;  /* sobe o título para ficar mais perto da logo */
-  margin-bottom: 8px;
+  /* diminui espaço acima do título */
+  margin: 16px 0 8px;
 }
-
 .hero__title .highlight {
   background: #fff200;
   color: #e22128;
@@ -95,7 +91,7 @@ body {
   padding: 12px 32px;
   font-size: 16px;
   cursor: pointer;
-  margin-bottom: 32px;
+  margin: 16px 0 32px;
 }
 
 /* Hero Video Embed */
@@ -150,7 +146,7 @@ body {
   /* Hero adjustments */
   #hero {
     height: auto;
-    padding: 80px 0 40px;
+    padding: 16px 0 16px;
   }
 
   /* --- aqui vêm as suas duas solicitações --- */
@@ -160,11 +156,16 @@ body {
     width: 50%;            /* ocupa metade da largura da tela */
     max-width: 300px;      /* mas não ultrapassa 300px */
     height: auto;          /* ajusta proporcionalmente */
-    margin: 24px auto;     /* centraliza com mais espaço vertical */
+    margin: 16px auto 12px;
   }
   .hero__logo img {
     width: 100%;
     height: auto;
+  }
+
+  .hero__content {
+    /* empurra ainda mais para cima no mobile */
+    margin-top: -60px;
   }
 
   /* 2) Forçar o "um" a subir e manter "Jantar Romântico" junto */
@@ -178,15 +179,16 @@ body {
   /* reduz um pouco os tamanhos para caber melhor */
   .hero__title {
     font-size: 32px;
-    margin: 16px 0 8px;
+    margin: 12px 0 6px;
   }
   .hero__desc {
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   .btn--hero {
     font-size: 14px;
     padding: 10px 24px;
+    margin-bottom: 24px;
   }
   .hero__video {
     width: 100%;
