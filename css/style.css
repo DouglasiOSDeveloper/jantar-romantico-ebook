@@ -22,8 +22,9 @@ body {
 #hero {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;    /* garante altura mínima da viewport */
+  overflow: visible;    /* permite que vídeo e reviews ultrapassem */
+  padding-bottom: 40px; /* adiciona espaçamento extra abaixo se necessário */
 }
 .hero__bg {
   position: absolute;
