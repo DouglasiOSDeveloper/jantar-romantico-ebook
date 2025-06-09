@@ -336,13 +336,6 @@ body {
     padding: 120px 16px 80px;
   }
 
-  /* 1) Todas as soluções empilhadas em coluna */
-  .section2__solutions-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
   /* sobe o ícone, data, título, descrição e botão para a área branca */
   .section2__icon-heart,
   .section2__date,
@@ -350,8 +343,14 @@ body {
   .section2__desc,
   .btn--second {
     position: relative;
-    top: -100px;     /* ajuste até encaixar no branco, pode variar +/- 20px */
+    top: -20px;
     z-index: 2;
+  }
+
+  /* esconde as fitas vermelhas no mobile */
+  .ribbon,
+  .ribbon--reverse {
+    display: none;
   }
 
   /* alinha o X e o título de falsas soluções já no amarelo */
@@ -362,33 +361,45 @@ body {
     margin: 0 0 24px;
   }
 
-  /* empilha cada solução: ícone em cima, texto embaixo */
-  .solution,
-  .solution--reverse {
+  /* 1) empilha toda a lista de soluções em coluna */
+  .section2__solutions-list {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center;
-    text-align: center;
+    gap: 24px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
   }
-  /* 2) Ícone em cima, caixa embaixo para **todas** as soluções */
+
+  /* 2) garante cada solução em coluna, centralizada */
+  .solution {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+
+  /* 3) ícone sempre acima */
   .solution__icon {
-    width: 80px;
-    margin: 0 0 8px;
+    flex-shrink: 0 !important;
+    width: 80px !important;
+    margin: 0 0 8px !important;
     order: 0 !important;
   }
+
+  /* 4) caixa de texto sempre abaixo */
   .solution__box {
-    width: 100%;
+    width: 100% !important;
     order: 1 !important;
   }
 
-  /* 3) Remove qualquer order de desktop que afetava a segunda solução */
-  .solution--reverse .solution__icon {
-    order: 0 !important;
-  }
+  /* 5) anula qualquer ordem desktop na solução invertida */
+  .solution--reverse .solution__icon,
   .solution--reverse .solution__box {
-    order: 1 !important;
+    order: initial !important;
   }
 }
+
 
 
 /* === Seção 3 – A verdade é que… === */
