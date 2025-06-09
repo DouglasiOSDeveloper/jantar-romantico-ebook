@@ -24,8 +24,8 @@ body {
   width: 100vw;
   min-height: 100vh;
   overflow: visible;
-  /* reduzimos o padding-bottom original e adicionamos um padding-top para subir o conteúdo */
-  padding: 20px 0 20px;
+  /* Empurra todo o conteúdo para cima, criando um topo maior */
+  padding: 60px 0 20px;
 }
 
 .hero__bg {
@@ -44,47 +44,37 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* removido o padding-bottom extra e empurrado para cima */
-  padding: 0 16px 0;
-  margin-top: -40px;
+  padding: 0 16px;
 }
 
 /* Hero Logo */
 .hero__logo {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;       /* ajuste para recortar apenas a área visível da arte */
-  height: 100px;      /* idem */
-  margin: 0 0 16px;   /* zero em cima, 16px embaixo */
-  overflow: hidden;   /* recorta o whitespace invisível */
-  z-index: 2;         /* acima do bg */
+  width: 360px;           /* largura generosa */
+  height: 140px;          /* altura que recorta apenas a parte útil da arte */
+  margin: 0 auto 24px;    /* centraliza e cria espaço embaixo */
+  overflow: hidden;       /* recorta as margens brancas do arquivo */
 }
 
 .hero__logo img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: auto;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;    
+  object-position: center -20px; /* desloca a imagem internamente para cima */
 }
 
 /* Hero Texts */
 .hero__title {
   font-size: 48px;
   line-height: 1.2;
-  /* diminui espaço acima do título para aproximar da logo */
-  margin: 16px 0 8px;
+  margin: 16px 0 8px;     /* menos espaço acima para aproximar da logo */
 }
 
 .hero__title .highlight {
+  display: inline-block;
+  white-space: nowrap;    /* impede quebra dentro do highlight */
   background: #fff200;
   color: #e22128;
   padding: 0 4px;
-  display: inline-block;
-  white-space: nowrap; /* força “Jantar Romântico” sem quebra interna */
 }
 
 .hero__desc {
@@ -140,7 +130,6 @@ body {
   border-radius: 12px;
   padding: 16px;
   max-width: 240px;
-  /* sombra conforme especificado: X=-14, Y=18, Blur=2, Spread=0, cor=#540302 */
   box-shadow: -14px 18px 2px 0px #540302;
 }
 
@@ -159,53 +148,46 @@ body {
 /* === Responsividade === */
 @media (max-width: 768px) {
   #hero {
-    height: auto;
-    padding: 16px 0 16px;
+    /* menos topo no mobile, mas ainda traz conteúdo pra cima */
+    padding: 40px 0 16px;
   }
 
-  /* empurra ainda mais para cima no mobile */
-  .hero__content {
-    margin-top: -60px;
-  }
-
-  /* logo menor, mas sempre centrada */
+  /* Logo menor e proporcional */
   .hero__logo {
-    width: 50%;
-    max-width: 300px;
+    width: 60%;
+    max-width: 260px;
     height: auto;
-    margin: 16px auto 12px;
+    margin: 0 auto 16px;
   }
   .hero__logo img {
     width: 100%;
     height: auto;
+    object-fit: contain;
+    object-position: center top;
   }
 
-  /* reduz o título e ajusta margens */
+  /* Título e texto ajustados */
   .hero__title {
     font-size: 32px;
     margin: 12px 0 6px;
   }
-  .hero__title .highlight {
-    font-size: 1em;
-  }
-
-  /* texto e botão menores */
   .hero__desc {
     font-size: 14px;
     margin-bottom: 16px;
   }
+
   .btn--hero {
     font-size: 14px;
     padding: 10px 24px;
     margin-bottom: 24px;
   }
 
-  /* vídeo e reviews */
   .hero__video {
     width: 100%;
     padding-bottom: 56.25%;
     margin-bottom: 32px;
   }
+
   .reviews {
     flex-direction: column;
     gap: 16px;
