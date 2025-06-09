@@ -1,0 +1,18 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; }
+.container {
+  max-width:1200px; width:100%; margin:0 auto; padding:0 16px;
+}
+
+/* Hero full-bleed */
+#hero {
+  width:100vw; height:100vh;
+  background: rgba(226,33,40,0.3) url('../images/Fundo.png') center top/cover no-repeat;
+}
+/* … e assim por diante para cada seção … */
+
+/* Breakpoints */
+@media (max-width:768px) {
+  /* ajuste paddings, fontes e grids para 1 coluna */
+}
