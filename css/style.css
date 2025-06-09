@@ -160,7 +160,7 @@ body {
 .section2__content {
   position: relative;
   z-index: 1;
-  padding: 80px 16px;
+  padding: 80px 16px 120px;
   text-align: center;
 }
 
@@ -202,29 +202,6 @@ body {
   font-size: 18px;
   cursor: pointer;
   margin-bottom: 40px;
-}
-
-/* 2.6. Fitas “Por tempo limitado” */
-.section2__ribbons {
-  position: relative;
-  height: 60px;
-  margin-bottom: 40px;
-}
-.ribbon {
-  position: absolute;
-  top: 0;
-  width: 200%;
-  background: #e22128;
-  color: #fff;
-  padding: 8px 0;
-  font-size: 14px;
-  text-transform: uppercase;
-  transform: rotate(-10deg);
-  left: -50%;
-}
-.ribbon--reverse {
-  transform: rotate(10deg);
-  top: 30px;
 }
 
 /* 2.7. Ícone X e título de soluções */
