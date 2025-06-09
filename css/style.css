@@ -51,7 +51,7 @@ body {
   width: 530px;
   height: 260px;
   /* reduzimos a margem superior para ficar mais perto do topo */
-  margin: 8px 20px 36px;
+  margin: 8px auto 6px;
   overflow: hidden;
 }
 .hero__logo img {
