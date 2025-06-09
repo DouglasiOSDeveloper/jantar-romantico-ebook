@@ -392,13 +392,13 @@ body {
   margin-bottom: 20px;
 }
 .offer__benefits img {
-  width: 48px;        /* ícones maiores */
-  height: 48px;
+  width: 60px;        /* ícones maiores */
+  height: 60px;
   margin-right: 16px;
 }
 .offer__benefits span {
   color: #fff;
-  font-size: 20px;    /* texto maior */
+  font-size: 32px;    /* texto maior */
   line-height: 1.4;
 }
 
