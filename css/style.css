@@ -168,7 +168,7 @@ body {
 
 /* 2.3. Ícone + data */
 .section2__icon-heart {
-  width: 200px;
+  width: 300px;
   display: block;
   margin: 0 auto 8px;
 }
@@ -205,12 +205,11 @@ body {
 .section2__content > .btn--second {
   position: relative;
   top: -300px;    /* puxe este valor até alinhar certinho dentro da área branca */
-  z-index: 2;     /* garanta que fiquem acima das fitas */
 }
 
 /* 2.6. Ícone X e título de soluções (abaixo das fitas) */
 .section2__icon-x {
-  width: 48px;
+  width: 68px;
   display: block;
   margin: 0 auto 16px;
   position: relative;
@@ -224,31 +223,47 @@ body {
   z-index: 1;
 }
 
-/* 2.7. Lista de soluções empilhadas */
+/* 2.7. Lista de soluções empilhadas (ajustada) */
 .section2__solutions-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  max-width: 600px;
+  gap: 32px;           /* espaçamento maior */
+  max-width: 800px;    /* ou 100% */
   margin: 0 auto;
 }
+
+/* Container de cada item */
 .solution {
-  background: #BF2623;
-  color: #fff;
-  border-radius: 12px;
-  padding: 16px;
   display: flex;
   align-items: flex-start;
+  gap: 16px;
 }
+.solution--reverse {
+  flex-direction: row-reverse;
+}
+
+/* Ícone grande, sem encolher */
 .solution__icon {
-  width: 40px;
-  margin-right: 12px;
+  width: 80px;          /* maior que antes */
+  height: auto;
   flex-shrink: 0;
 }
+
+/* Caixa de texto com fundo, borda arredondada e sombra */
+.solution__box {
+  background: #BF2623;
+  border-radius: 12px;
+  padding: 16px;
+  flex: 1;              /* ocupa o restante do espaço */
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto dentro da caixa */
 .solution__text {
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: left;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;      /* um pouco maior */
+  line-height: 1.5;
 }
 
 /* === Responsividade Section 2 === */
