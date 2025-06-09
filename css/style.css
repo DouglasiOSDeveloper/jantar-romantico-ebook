@@ -49,8 +49,8 @@ body {
 
 /* Hero Logo */
 .hero__logo {
-  width: 700px;           /* largura generosa */
-  height: 380px;          /* altura que recorta apenas a parte útil da arte */
+  width: 640px;           /* largura generosa */
+  height: 320px;          /* altura que recorta apenas a parte útil da arte */
   margin: 0 auto 2px;    /* centraliza e cria espaço embaixo */
   overflow: hidden;       /* recorta as margens brancas do arquivo */
 }
@@ -59,7 +59,7 @@ body {
   width: auto;
   height: 100%;
   object-fit: contain;    
-  object-position: center -20px; /* desloca a imagem internamente para cima */
+  object-position: center;
 }
 
 /* Hero Texts */
