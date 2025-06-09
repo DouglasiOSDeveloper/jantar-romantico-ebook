@@ -50,15 +50,15 @@ body {
 .hero__logo {
   width: 530px;
   height: 260px;
-  /* reduzimos a margem superior para ficar mais perto do topo */
-  margin: 8px auto 6px;
+  margin: 16px auto 24px;
   overflow: hidden;
 }
 .hero__logo img {
   display: block;
   height: 100%;
   width: auto;
-  object-fit: contain;
+   object-fit: cover;
+  object-position: center top; /* centraliza horizontalmente, ajusta vertical se precisar subir mais */
 }
 
 /* Hero Texts */
