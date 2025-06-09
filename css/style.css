@@ -162,8 +162,7 @@ body {
 .section2__content {
   position: relative;
   z-index: 1;
-  margin-top: -240px;
-  padding: 0 16px 300px;    /* mais espaço embaixo */
+  padding: 280px 16px 300px;    /* mais espaço embaixo */
   text-align: center;
 }
 
@@ -207,6 +206,16 @@ body {
   margin-bottom: 40px;
   position: relative;
   z-index: 2;
+}
+
+.section2__content > .section2__icon-heart,
+.section2__content > .section2__date,
+.section2__content > .section2__title,
+.section2__content > .section2__desc,
+.section2__content > .btn--second {
+  position: relative;
+  top: -200px;    /* puxe este valor até alinhar certinho dentro da área branca */
+  z-index: 2;     /* garanta que fiquem acima das fitas */
 }
 
 /* 2.6. Ícone X e título de soluções (abaixo das fitas) */
