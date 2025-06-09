@@ -27,6 +27,7 @@ body {
   /* reduzimos o padding-bottom original e adicionamos um padding-top para subir o conteúdo */
   padding: 20px 0 20px;
 }
+
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -35,6 +36,7 @@ body {
   background-color: rgba(226, 33, 40, 0.3);
   z-index: 0;
 }
+
 .hero__content {
   position: relative;
   z-index: 1;
@@ -42,30 +44,30 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 16px 0;  /* removido o padding-bottom extra */
-  margin-top: -40px;  /* empurra todo o conteúdo para cima */
+  /* removido o padding-bottom extra e empurrado para cima */
+  padding: 0 16px 0;
+  margin-top: -40px;
 }
 
 /* Hero Logo */
 .hero__logo {
-  position: relative;   /* para o left funcionar */
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;         /* ajuste até só pegar a parte visível da arte */
-  height: 100px;        /* idem */
-  margin: 0 0 16px;     /* zero em cima, 16px embaixo */
-  overflow: hidden;     /* recorta o whitespace invisível */
-  z-index: 2;           /* acima do bg */
+  width: 300px;       /* ajuste para recortar apenas a área visível da arte */
+  height: 100px;      /* idem */
+  margin: 0 0 16px;   /* zero em cima, 16px embaixo */
+  overflow: hidden;   /* recorta o whitespace invisível */
+  z-index: 2;         /* acima do bg */
 }
 
-/* 3) A imagem escalará para preencher a caixa e ficará centralizada */
 .hero__logo img {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: auto;   
-  height: 100%;  
+  width: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -73,17 +75,18 @@ body {
 .hero__title {
   font-size: 48px;
   line-height: 1.2;
-  /* diminui espaço acima do título */
+  /* diminui espaço acima do título para aproximar da logo */
   margin: 16px 0 8px;
 }
+
 .hero__title .highlight {
   background: #fff200;
   color: #e22128;
   padding: 0 4px;
-  /* NÃO deixa quebrar dentro do highlight */
   display: inline-block;
-  white-space: nowrap;
+  white-space: nowrap; /* força “Jantar Romântico” sem quebra interna */
 }
+
 .hero__desc {
   font-size: 16px;
   max-width: 600px;
@@ -113,6 +116,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
 }
+
 .hero__video iframe {
   position: absolute;
   top: 0;
@@ -129,20 +133,23 @@ body {
   justify-content: center;
   margin-bottom: 40px;
 }
+
 .review {
   background: #BF2623;
   color: #fff;
   border-radius: 12px;
   padding: 16px;
   max-width: 240px;
-  /* sombra conforme especificado */
+  /* sombra conforme especificado: X=-14, Y=18, Blur=2, Spread=0, cor=#540302 */
   box-shadow: -14px 18px 2px 0px #540302;
 }
+
 .review strong {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
 }
+
 .review p {
   font-size: 14px;
   line-height: 1.4;
@@ -151,19 +158,21 @@ body {
 
 /* === Responsividade === */
 @media (max-width: 768px) {
-  /* Hero adjustments */
   #hero {
     height: auto;
     padding: 16px 0 16px;
   }
 
-  /* --- aqui vêm as suas duas solicitações --- */
+  /* empurra ainda mais para cima no mobile */
+  .hero__content {
+    margin-top: -60px;
+  }
 
-  /* 1) Centralizar e aumentar a logo */
+  /* logo menor, mas sempre centrada */
   .hero__logo {
-    width: 50%;            /* ocupa metade da largura da tela */
-    max-width: 300px;      /* mas não ultrapassa 300px */
-    height: auto;          /* ajusta proporcionalmente */
+    width: 50%;
+    max-width: 300px;
+    height: auto;
     margin: 16px auto 12px;
   }
   .hero__logo img {
@@ -171,24 +180,16 @@ body {
     height: auto;
   }
 
-  .hero__content {
-    /* empurra ainda mais para cima no mobile */
-    margin-top: -60px;
-  }
-
-  /* 2) Forçar o "um" a subir e manter "Jantar Romântico" junto */
-  /*    com o display:inline-block e white-space:nowrap no highlight, */
-  /*    o browser vai quebrar a linha antes de todo o span, */
-  /*    deixando "com um" na linha de cima e o highlight inteiro na linha de baixo */
-  .hero__title .highlight {
-    font-size: 1em;        /* mantém o mesmo tamanho */
-  }
-
-  /* reduz um pouco os tamanhos para caber melhor */
+  /* reduz o título e ajusta margens */
   .hero__title {
     font-size: 32px;
     margin: 12px 0 6px;
   }
+  .hero__title .highlight {
+    font-size: 1em;
+  }
+
+  /* texto e botão menores */
   .hero__desc {
     font-size: 14px;
     margin-bottom: 16px;
@@ -198,6 +199,8 @@ body {
     padding: 10px 24px;
     margin-bottom: 24px;
   }
+
+  /* vídeo e reviews */
   .hero__video {
     width: 100%;
     padding-bottom: 56.25%;
@@ -211,6 +214,7 @@ body {
     max-width: 100%;
   }
 }
+
 
 
 /* === Seção 2 – Falsas Soluções === */
