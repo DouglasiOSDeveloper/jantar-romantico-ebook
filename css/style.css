@@ -162,15 +162,28 @@ body {
 .section2__content {
   position: relative;
   z-index: 1;
-  padding: 280px 16px 300px;    /* mais espaço embaixo */
+  padding: 200px 16px 300px;    /* mantém o espaço branco em cima e embaixo */
   text-align: center;
 }
 
 /* 2.3. Ícone + data */
 .section2__icon-heart {
-  width: 300px;
+  width: 200px;
   display: block;
   margin: 0 auto 8px;
+  position: relative;
+  z-index: 2;                   /* acima das fitas */
+}
+.section2__date {
+  display: inline-block;
+  background: #e22128;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
 }
 
 /* 2.4. Título e descrição (acima das fitas) */
@@ -178,16 +191,20 @@ body {
   font-size: 32px;
   color: #8C1A26;
   margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
 }
 .section2__desc {
   font-size: 18px;
   color: #5A0F15;
   margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
 }
 
-/* 2.5. Botão CTA */
+/* 2.5. Botão CTA (acima das fitas) */
 .btn--second {
-  background: #E61919;          /* cor ajustada */
+  background: #E61919;
   color: #fff;
   padding: 16px 32px;
   border: none;
@@ -199,17 +216,9 @@ body {
   z-index: 2;
 }
 
-.section2__content > .section2__icon-heart,
-.section2__content > .section2__title,
-.section2__content > .section2__desc,
-.section2__content > .btn--second {
-  position: relative;
-  top: -300px;    /* puxe este valor até alinhar certinho dentro da área branca */
-}
-
 /* 2.6. Ícone X e título de soluções (abaixo das fitas) */
 .section2__icon-x {
-  width: 68px;
+  width: 48px;
   display: block;
   margin: 0 auto 16px;
   position: relative;
@@ -223,12 +232,12 @@ body {
   z-index: 1;
 }
 
-/* 2.7. Lista de soluções empilhadas (ajustada) */
+/* 2.7. Lista de soluções empilhadas */
 .section2__solutions-list {
   display: flex;
   flex-direction: column;
-  gap: 32px;           /* espaçamento maior */
-  max-width: 800px;    /* ou 100% */
+  gap: 32px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -241,7 +250,7 @@ body {
 
 /* Ícone grande, sem encolher */
 .solution__icon {
-  width: 80px;          /* maior que antes */
+  width: 80px;
   height: auto;
   flex-shrink: 0;
 }
@@ -251,7 +260,7 @@ body {
   background: #BF2623;
   border-radius: 12px;
   padding: 16px;
-  flex: 1;              /* ocupa o restante do espaço */
+  flex: 1;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -259,16 +268,20 @@ body {
 .solution__text {
   margin: 0;
   color: #fff;
-  font-size: 16px;      /* um pouco maior */
+  font-size: 16px;
   line-height: 1.5;
 }
 
-/* Alternativa: sem alterar HTML, inverte o 2º filho */
-.section2__solutions-list > .solution:nth-child(2) {
+/* 2.8. Forçar inversão no 2º item (restaurante) via order */
+.solution--reverse {
   display: flex;
-  flex-direction: row-reverse !important;
 }
-
+.solution--reverse .solution__box {
+  order: 1;
+}
+.solution--reverse .solution__icon {
+  order: 2;
+}
 
 /* === Responsividade Section 2 === */
 @media (max-width: 768px) {
@@ -286,12 +299,14 @@ body {
     padding: 14px 24px;
   }
   .section2__solutions-list {
-    grid-template-columns: 1fr;
+    gap: 24px;
   }
+  /* esconder fitas se precisar */
   .ribbon, .ribbon--reverse {
-    display: none; /* se não couber bem no mobile */
+    display: none;
   }
 }
+
 
 /* === Seção 3 – A verdade é que… === */
 #section3 {
