@@ -633,6 +633,13 @@ body {
   font-weight: 700;
 }
 
+/* tamanho maior para o ícone exclusivo */
+.offer__card-features .feature--exclusive img {
+  width: 64px;    /* antes era 48px */
+  height: auto;
+}
+
+
 /* responsividade */
 @media (max-width: 768px) {
   .offer__wrapper {
@@ -774,7 +781,7 @@ body {
   margin-bottom: 8px;
 }
 .card-price strong {
-  font-size: 64px;
+  font-size: 48px;
   display: block;
   margin-bottom: 16px;
 }
