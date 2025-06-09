@@ -161,9 +161,9 @@ body {
 /* 2.2. Conteúdo por cima do bg */
 .section2__content {
   position: relative;
-  z-index: 3;                 /* acima das fitas (z-index das fitas deve ser <= 2) */
-  background-color: #fff;     /* bloco branco */
-  padding: 60px 16px 200px;   /* sobe o topo e empurra o rodapé */
+  z-index: 1;
+  margin-top: -240px;
+  padding: 0 16px 300px;    /* mais espaço embaixo */
   text-align: center;
 }
 
