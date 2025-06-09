@@ -203,10 +203,9 @@ body {
 #section2 {
   position: relative;
   width: 100vw;
-  min-height: 100vh;           /* garante altura suficiente */
+  min-height: 100vh;
 }
 
-/* 2.1. Background full-bleed */
 .section2__bg {
   position: absolute;
   inset: 0;
@@ -214,22 +213,30 @@ body {
   z-index: 0;
 }
 
-/* 2.2. Conteúdo por cima do bg */
 .section2__content {
   position: relative;
   z-index: 1;
-  padding: 280px 16px 300px;    /* mais espaço embaixo */
+  padding: 280px 16px 300px;  /* mantém a mesma área no desktop */
   text-align: center;
 }
 
-/* 2.3. Ícone + data */
+/* Ícone + data (sempre posicionados pelo fluxo normal) */
 .section2__icon-heart {
   width: 300px;
-  display: block;
   margin: 0 auto 8px;
+  display: block;
+}
+.section2__date {
+  display: inline-block;
+  background: #e22128;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 24px;
 }
 
-/* 2.4. Título e descrição (acima das fitas) */
+/* Título e descrição (acima das fitas) */
 .section2__title {
   font-size: 32px;
   color: #8C1A26;
@@ -241,9 +248,9 @@ body {
   margin-bottom: 24px;
 }
 
-/* 2.5. Botão CTA */
+/* Botão CTA */
 .btn--second {
-  background: #E61919;          /* cor ajustada */
+  background: #E61919;
   color: #fff;
   padding: 16px 32px;
   border: none;
@@ -255,19 +262,11 @@ body {
   z-index: 2;
 }
 
-.section2__content > .section2__icon-heart,
-.section2__content > .section2__title,
-.section2__content > .section2__desc,
-.section2__content > .btn--second {
-  position: relative;
-  top: -300px;    /* puxe este valor até alinhar certinho dentro da área branca */
-}
-
-/* 2.6. Ícone X e título de soluções (abaixo das fitas) */
+/* Ícone X e título de soluções (abaixo das fitas) */
 .section2__icon-x {
   width: 68px;
-  display: block;
   margin: 0 auto 16px;
+  display: block;
   position: relative;
   z-index: 1;
 }
@@ -279,7 +278,7 @@ body {
   z-index: 1;
 }
 
-/* 2.7. Lista de soluções empilhadas */
+/* Lista de soluções empilhadas */
 .section2__solutions-list {
   display: flex;
   flex-direction: column;
@@ -288,22 +287,20 @@ body {
   margin: 0 auto;
 }
 
-/* Container de cada item */
+/* Cada solução: ícone ao lado da caixa de texto */
 .solution {
   display: flex;
   align-items: flex-start;
   gap: 16px;
 }
 
-/* Ícone grande, sem encolher */
+/* Ícone grande */
 .solution__icon {
   width: 160px;
-  height: auto;
   flex-shrink: 0;
 }
 
-/* Caixa de texto com fundo, borda arredondada e sombra */
-/* Ajuste da sombra para X = -14px, Y = 18px, Blur = 2px, Spread = 0px, cor = #540302 */
+/* Caixa de texto com sombra */
 .solution__box {
   background: #BF2623;
   border-radius: 12px;
@@ -311,8 +308,6 @@ body {
   flex: 1;
   box-shadow: -14px 18px 2px 0px #540302;
 }
-
-/* Texto dentro da caixa */
 .solution__text {
   margin: 0;
   color: #fff;
@@ -320,7 +315,7 @@ body {
   line-height: 1.5;
 }
 
-/* 2.8. Forçar inversão no 2º item (restaurante) via order */
+/* Invertemos via order apenas no desktop */
 .solution--reverse {
   display: flex;
 }
@@ -331,29 +326,53 @@ body {
   order: 2;
 }
 
-/* === Responsividade Section 2 === */
+/* === Responsividade Seção 2 (mobile) === */
 @media (max-width: 768px) {
-  .section2__content {
-    padding: 32px 16px 80px;
+  /* força todo o conteúdo principal para o fluxo normal, acima das fitas */
+  .section2__content > .section2__icon-heart,
+  .section2__content > .section2__date,
+  .section2__content > .section2__title,
+  .section2__content > .section2__desc,
+  .section2__content > .btn--second {
+    position: static !important;
+    top: auto !important;
+    margin-top: 16px;
   }
-  .section2__title {
-    font-size: 24px;
-  }
-  .section2__desc {
-    font-size: 16px;
-  }
-  .btn--second {
-    font-size: 16px;
-    padding: 14px 24px;
-  }
-  .section2__solutions-list {
-    gap: 24px;
-  }
-  /* esconder fitas se precisar */
-  .ribbon, .ribbon--reverse {
+  /* remove as fitas para não atrapalhar no mobile */
+  .ribbon,
+  .ribbon--reverse {
     display: none;
   }
+  /* ajusta o padding para que os componentes fiquem dentro da área branca */
+  .section2__content {
+    padding: 120px 16px 80px;
+  }
+  /* centraliza e aumenta o ícone X e o título vazio */
+  .section2__icon-x {
+    margin: 24px auto 16px;
+  }
+  .section2__solutions-title {
+    margin-bottom: 24px;
+  }
+  /* empilha cada solução no mobile: ícone acima, texto abaixo */
+  .solution {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .solution__icon {
+    width: 80px;
+    margin-bottom: 8px;
+  }
+  .solution__box {
+    width: 100%;
+  }
+  /* garante que a segunda solução também fique empilhada, sem order */
+  .solution--reverse {
+    flex-direction: column;
+  }
 }
+
 
 /* === Seção 3 – A verdade é que… === */
 #section3 {
