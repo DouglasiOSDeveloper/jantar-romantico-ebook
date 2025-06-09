@@ -242,6 +242,11 @@ body {
   flex-direction: row-reverse;
 }
 
+.section2__solutions-list .solution:nth-child(2) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 /* Ícone grande, sem encolher */
 .solution__icon {
   width: 80px;          /* maior que antes */
