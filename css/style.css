@@ -49,7 +49,7 @@ body {
 
 /* Hero Logo */
 .hero__logo {
-  width: 5400px;           /* largura generosa */
+  width: 540px;           /* largura generosa */
   height: 260px;          /* altura que recorta apenas a parte útil da arte */
   margin: 0 auto 2px;    /* centraliza e cria espaço embaixo */
   overflow: hidden;       /* recorta as margens brancas do arquivo */
