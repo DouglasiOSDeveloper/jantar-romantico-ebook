@@ -337,7 +337,7 @@ body {
   }
 }
 
-/* === Offer Section (Seção 5) === */
+/* === Seção 5 – Oferta e Preço === */
 #offer {
   position: relative;
   width: 100vw;
@@ -354,7 +354,8 @@ body {
   z-index: 1;
   padding: 80px 16px;
 }
-/* wrapper com o quadrado grande de oferta */
+
+/* wrapper principal: duas colunas (benefícios + card) */
 .offer__wrapper {
   display: flex;
   align-items: flex-start;
@@ -365,36 +366,43 @@ body {
   gap: 32px;
 }
 
-/* título “Você vai receber” e lista logo abaixo */
-.offer__heading {
-  font-size: 28px;
-  color: #fff200;
-  margin-bottom: 16px;   /* lista imediatamente abaixo */
-  flex-shrink: 0;
+/* coluna da esquerda: título + lista */
+.offer__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+/* título “Você vai receber” */
+.offer__heading {
+  font-size: 36px;         /* maior para ocupar espaço */
+  color: #fff200;
+  margin-bottom: 24px;     /* lista logo abaixo */
+}
+
+/* lista de benefícios */
 .offer__benefits {
   list-style: none;
   padding: 0;
-  margin: 0 0 40px;      /* espaço antes do card */
-  flex: 1;
+  margin: 0;
 }
 .offer__benefits li {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;     /* espaçamento um pouco maior */
 }
 .offer__benefits img {
-  width: 32px;
-  height: 32px;
-  margin-right: 12px;
+  width: 40px;             /* ícones maiores */
+  height: 40px;
+  margin-right: 16px;
 }
 .offer__benefits span {
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;         /* texto maior */
   line-height: 1.4;
 }
 
-/* cartão interno semitransparente */
+/* cartão interno semitransparente (coluna da direita) */
 .offer__card {
   position: relative;
   width: 300px;
@@ -422,13 +430,12 @@ body {
 
 /* preço antigo riscado e novo preço */
 .offer__card-old {
-  display: block;
   text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
   margin-bottom: 8px;
   position: relative;
   z-index: 1;
-  font-size: 14px;
-  opacity: 0.6;
 }
 .offer__card-old del {
   text-decoration: line-through;
@@ -452,7 +459,7 @@ body {
   position: relative;
   z-index: 1;
 }
-/* primeiro item: só ícone exclusivo centralizado */
+/* primeiro item: ícone exclusivo centralizado */
 .offer__card-features .feature--exclusive {
   display: flex;
   justify-content: center;
@@ -477,11 +484,12 @@ body {
   font-size: 14px;
 }
 
-/* botão de oferta em negrito */
+/* botão de oferta em negrito, sem sublinhado e com cor ajustada */
 .btn--offer {
   display: block;
   background: #fff;
-  color: #e22128;
+  color: #7D0000;          /* cor do texto */
+  text-decoration: none;   /* remove sublinhado */
   border: none;
   border-radius: 24px;
   padding: 12px 24px;
@@ -503,18 +511,31 @@ body {
     align-items: center;
     padding: 24px;
   }
+  .offer__left {
+    width: 100%;
+    margin-bottom: 32px;
+  }
   .offer__heading {
     text-align: center;
-    width: 100%;
+    font-size: 28px;
   }
-  .offer__benefits {
-    margin-bottom: 32px;
+  .offer__benefits li {
+    margin-bottom: 16px;
+  }
+  .offer__benefits img {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+  }
+  .offer__benefits span {
+    font-size: 16px;
   }
   .offer__card {
     width: 100%;
     max-width: 350px;
   }
 }
+
 
 
 /* === Seção 6 – Garantia === */
