@@ -197,8 +197,11 @@ body {
     gap: 16px;
   }
   .review {
-    max-width: 100%;
-  }
+  max-width: 100%;
+  width: 100%;
+  flex: initial; /* impede que a altura se estique automaticamente */
+  height: auto;  /* garante que a altura acompanhe o conteúdo */
+}
 }
 
 
