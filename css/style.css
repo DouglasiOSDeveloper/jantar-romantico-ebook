@@ -160,6 +160,22 @@ body {
     margin: 0;
 }
 
+.review__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  justify-content: center;
+  text-align: left;
+}
+
+.review__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* === Responsividade === */
 @media (max-width: 768px) {
     #hero {
@@ -218,6 +234,11 @@ body {
         height: auto;
         /* garante que a altura acompanhe o conteúdo */
     }
+
+    .review__avatar {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 
