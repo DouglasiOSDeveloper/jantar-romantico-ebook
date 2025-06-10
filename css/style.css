@@ -175,7 +175,7 @@ body {
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: -2px; /* Ajusta verticalmente */
+  margin-top: -20px; /* Ajusta verticalmente */
 }
 
 /* === Responsividade === */
