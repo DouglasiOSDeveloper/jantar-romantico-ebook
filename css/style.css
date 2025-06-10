@@ -176,6 +176,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   vertical-align: middle;
+   margin-top: -2px;
 }
 
 /* === Responsividade === */
